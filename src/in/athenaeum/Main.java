@@ -3,9 +3,11 @@ package in.athenaeum;
 public class Main {
 
     public static void main(String[] args) {
-	    Sample sample1 = Sample.getInstance();
-	    Sample sample2 = Sample.getInstance();
+	    ComicBook comicBook = new ComicBook();
+	    Novel novel = new Novel();
+	    TechBook techBook = new TechBook();
+	    TextBook textBook = new TextBook();
 
-        System.out.println(sample1 == sample2);
+	    // business logic
     }
 }
