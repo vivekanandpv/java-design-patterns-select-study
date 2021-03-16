@@ -3,7 +3,9 @@ package in.athenaeum;
 public class Main {
 
     public static void main(String[] args) {
-	    Sample sample1 = new Sample();
-	    Sample sample2 = new Sample();  // how do I prevent this?
+	    Sample sample1 = Sample.getInstance();
+	    Sample sample2 = Sample.getInstance();
+
+        System.out.println(sample1 == sample2);
     }
 }
