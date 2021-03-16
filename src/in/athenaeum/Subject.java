@@ -3,29 +3,29 @@ package in.athenaeum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Subject {
-    private String message;
-    private final List<Observer> invocationList;
+public class Subject<T> {
+    private T value;
+    private final List<Observer<T>> invocationList;
 
     public Subject() {
         this.invocationList = new ArrayList<>();
     }
 
-    public void register(Observer observer) {
+    public void register(Observer<T> observer) {
         this.invocationList.add(observer);
     }
 
-    public String getMessage() {
-        return message;
+    public T getMessage() {
+        return value;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessage(T message) {
+        this.value = message;
         this.execute();
     }
 
     public void execute() {
-        for(Observer observer: invocationList) {
+        for(Observer<T> observer: invocationList) {
             observer.update();
         }
     }

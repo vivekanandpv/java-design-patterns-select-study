@@ -1,7 +1,7 @@
 package in.athenaeum;
 
-public class LaptopObserver extends Observer {
-    public LaptopObserver(Subject subject) {
+public class LaptopObserver<T> extends Observer<T> {
+    public LaptopObserver(Subject<T> subject) {
         super(subject);
     }
 
@@ -11,7 +11,7 @@ public class LaptopObserver extends Observer {
     }
 
     @Override
-    public void transmit(String message) {
-        this.subject.setMessage(message);
+    public void transmit(T value) {
+        this.subject.setMessage(value);
     }
 }

@@ -1,14 +1,14 @@
 package in.athenaeum;
 
-public abstract class Observer {
-    protected final Subject subject;
+public abstract class Observer<T> {
+    protected final Subject<T> subject;
 
-    public Observer(Subject subject) {
+    public Observer(Subject<T> subject) {
         this.subject = subject;
         this.subject.register(this);
     }
 
     public abstract void update();
 
-    public abstract void transmit(String message);
+    public abstract void transmit(T message);
 }
