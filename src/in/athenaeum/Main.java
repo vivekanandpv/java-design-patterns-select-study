@@ -3,11 +3,12 @@ package in.athenaeum;
 public class Main {
 
     public static void main(String[] args) {
-        OrderBase premiumOrder = new PremiumOrder();
-        OrderBase regularOrder = new RegularOrder();
+        Subject subject = new Subject();
+        Observer sObserver = new SmartphoneObserver(subject);
+        Observer lObserver = new LaptopObserver(subject);
 
-        premiumOrder.process();
-        System.out.println("-------------------------------");
-        regularOrder.process();
+        subject.setMessage("Good evening!");
+
+        sObserver.transmit("Hi there!");
     }
 }
