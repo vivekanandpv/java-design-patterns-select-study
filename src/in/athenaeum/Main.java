@@ -3,7 +3,14 @@ package in.athenaeum;
 public class Main {
 
     public static void main(String[] args) {
-        PoS pointOfSale = PoSProvider.getPointOfSale();
-        pointOfSale.swipeCard("1234 5678 9874 6523");
+        ApplicationBase application = new LoanApplication(
+                100000,
+                780,
+                true,
+                2,
+                5000
+        );
+
+        System.out.println(application.isApproved(new PrimeApprovalStrategy()));
     }
 }
