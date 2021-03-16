@@ -6,7 +6,8 @@ public class LoanApplication extends ApplicationBase {
             int creditScore,
             boolean cityDweller,
             int existingLoans,
-            int outstandingLoanAmount) {
+            int outstandingLoanAmount
+    ) {
         super(
                 annualIncome,
                 creditScore,
