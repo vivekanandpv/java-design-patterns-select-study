@@ -3,14 +3,11 @@ package in.athenaeum;
 public class Main {
 
     public static void main(String[] args) {
-        ApplicationBase application = new LoanApplication(
-                100000,
-                780,
-                true,
-                2,
-                5000
-        );
+        OrderBase premiumOrder = new PremiumOrder();
+        OrderBase regularOrder = new RegularOrder();
 
-        System.out.println(application.isApproved(new PrimeApprovalStrategy()));
+        premiumOrder.process();
+        System.out.println("-------------------------------");
+        regularOrder.process();
     }
 }
